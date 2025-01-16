@@ -6,4 +6,8 @@ import org.springframework.stereotype.Service;
 
 public interface PostWriteService {
     PostDto create(PostDto postDto);
+
+    PostDto update(PostDto postDto);
+
+    void delete(String title);
 }

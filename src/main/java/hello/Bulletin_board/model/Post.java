@@ -1,5 +1,6 @@
 package hello.Bulletin_board.model;
 
+import hello.Bulletin_board.dto.PostDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,5 +24,9 @@ public class Post {
     private String content;
 
 
-
+    public Post update(PostDto postDto) {
+        this.title = postDto.getTitle();
+        this.content = postDto.getContent();
+        return this;
+    }
 }

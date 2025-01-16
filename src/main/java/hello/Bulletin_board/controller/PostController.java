@@ -26,4 +26,14 @@ public class PostController {
     public PostDto createPost(@RequestBody PostDto postdto) {
         return postWriteService.create(postdto);
     }
+
+    @PostMapping("/api/update")
+    public PostDto updatePost(@RequestBody PostDto postdto) {
+        return postWriteService.update(postdto);
+    }
+
+    @DeleteMapping("/api/delete/{title}")
+    public void deletePost(@PathVariable String title) {
+        postWriteService.delete(title);
+    }
 }
